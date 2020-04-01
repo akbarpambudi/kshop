@@ -40,7 +40,7 @@ public class CustomerController {
         return ResponseEntity.ok().build();
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/{id}/activate")
     public ResponseEntity<Void> activateCustomer(@PathVariable UUID id) {
         this.commandGateway.sendAndWait(new ActivateCustomerCommand(id));
         return ResponseEntity.ok().build();
